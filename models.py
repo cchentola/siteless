@@ -27,6 +27,15 @@ class Personas(BaseModel):
     personas: list[str]
 
 
+class GoalsResponse(BaseModel):
+    goals: list[str]
+
+
+class Goals(BaseModel):
+    persona: str
+    goals: list[str]
+
+
 class JourneyMap(BaseModel):
     persona: str
     stages: list[str]
@@ -39,5 +48,21 @@ class Content(JourneyMap):
 
 
 class StageFeatures(BaseModel):
-    features: list[str]
-    # user: list[str]
+    persona: str
+    features: dict
+
+
+class Stage(BaseModel):
+    stage: str
+
+
+class VisitorData(BaseModel):
+    clicks: int
+    time_spent: int
+    pages_viewed: int
+    click_ids: list[str]
+
+
+class VisitorType(BaseModel):
+    persona: str
+    stage: str

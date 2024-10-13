@@ -58,6 +58,7 @@ def get_customer_personas(competitors: Competitor) -> Personas:
                 ),
             },
         ],
+        temperature=0.0,
         response_format=PersonaResponse,
     )
     return Personas(
